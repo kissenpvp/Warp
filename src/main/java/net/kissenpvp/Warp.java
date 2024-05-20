@@ -100,7 +100,8 @@ public class Warp extends JavaPlugin {
         pluginManager.registerTranslation("server.warp.list.empty", new MessageFormat("There have no warps available."), this);
         pluginManager.registerTranslation("server.warp.list.entry", new MessageFormat("{0} {1}"), this);
         pluginManager.registerTranslation("server.warp.teleport.chat", new MessageFormat("[Teleport]"), this);
-        getTable().registerMeta(this).getCollection("warp_list", LocationNode.class).join();
+
+        this.warpList = getTable().registerMeta(this).getCollection("warp_list", LocationNode.class).join();
     }
 
     /**
