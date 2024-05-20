@@ -10,7 +10,9 @@ import net.kissenpvp.core.api.database.connection.DatabaseConnection;
 import net.kissenpvp.core.api.database.connection.DatabaseImplementation;
 import net.kissenpvp.core.api.database.meta.Table;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
+import net.kissenpvp.core.api.database.savable.SavableMap;
 import net.kissenpvp.core.api.util.PageBuilder;
+import net.kissenpvp.paper.api.base.Context;
 import net.kissenpvp.visual.api.theme.ThemeProvider;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -60,6 +62,10 @@ public class Warp extends JavaPlugin {
         DatabaseImplementation databaseImplementation = Bukkit.getKissen().getImplementation(DatabaseImplementation.class);
         DatabaseConnection connection = databaseImplementation.getConnection("private").orElse(databaseImplementation.getPrimaryConnection());
         return connection.createTable("warp_table");
+    }
+
+    public static @NotNull SavableMap getRepository(@NotNull Player player) {
+        return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
     }
 
     @Override

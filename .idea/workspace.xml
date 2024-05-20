@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="Initial Commit">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/Warp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/Warp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/DeleteHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/DeleteHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/HomeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/HomeCommand.java" afterDir="false" />
@@ -103,7 +104,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/ivo/Library/Warp",
     "node.js.detected.package.eslint": "true",
@@ -218,6 +219,7 @@
       <workItem from="1716201230497" duration="196000" />
       <workItem from="1716201475336" duration="188000" />
       <workItem from="1716201670631" duration="1515000" />
+      <workItem from="1716203524954" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -232,6 +234,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />

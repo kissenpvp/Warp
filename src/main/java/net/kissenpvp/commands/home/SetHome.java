@@ -9,9 +9,6 @@ import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.command.exception.OperationException;
 import net.kissenpvp.core.api.config.ConfigurationImplementation;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
-import net.kissenpvp.core.api.database.savable.SavableMap;
-import net.kissenpvp.paper.api.base.Context;
-import net.kissenpvp.paper.api.permission.PaperPermission;
 import net.kissenpvp.paper.api.permission.Permission;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
@@ -59,8 +56,7 @@ public class SetHome {
     public void setHomeCommand(@NotNull CommandPayload<CommandSender> commandPayload, @ArgumentName("home") String homeName) {
         Player player = (Player) commandPayload.getSender();
 
-        SavableMap repository = player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
-        MetaList<LocationNode> homeList = repository.getListNotNull("home_list", LocationNode.class);
+        MetaList<LocationNode> homeList = Warp.getRepository(player).getListNotNull("home_list", LocationNode.class);
 
         test(player, homeList); // throws if max homes reached
 

@@ -1,6 +1,5 @@
 package net.kissenpvp.commands.home;
 
-import com.google.common.base.Preconditions;
 import net.kissenpvp.LocationNode;
 import net.kissenpvp.Warp;
 import net.kissenpvp.core.api.command.CommandPayload;
@@ -13,16 +12,12 @@ import net.kissenpvp.core.api.util.PageImplementation;
 import net.kissenpvp.paper.api.base.Context;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Stream;
 
 /**
  * The ListHome class containing a command to list a player's homes.
@@ -38,10 +33,6 @@ import java.util.stream.Stream;
  * @see Warp
  */
 public class ListHome {
-
-    private static @NotNull SavableMap getRepository(@NotNull Player player) {
-        return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
-    }
 
     /**
      * Command handler for listing a player's homes.
@@ -65,8 +56,7 @@ public class ListHome {
         Player player = (Player) commandPayload.getSender();
         Warp plugin = Warp.getPlugin(Warp.class);
 
-        SavableMap repository = player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
-        List<LocationNode> homeList = repository.getListNotNull("home_list", LocationNode.class);
+        List<LocationNode> homeList = Warp.getRepository(player).getListNotNull("home_list", LocationNode.class);
         plugin.validate(!homeList.isEmpty(), Component.translatable("server.home.list.empty"));
 
         Component home = Component.text("Home");

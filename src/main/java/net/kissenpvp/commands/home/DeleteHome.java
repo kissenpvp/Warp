@@ -8,8 +8,6 @@ import net.kissenpvp.core.api.command.annotations.ArgumentName;
 import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.command.annotations.TabCompleter;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
-import net.kissenpvp.core.api.database.savable.SavableMap;
-import net.kissenpvp.paper.api.base.Context;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -34,9 +32,6 @@ import java.util.stream.Collectors;
  */
 public class DeleteHome {
 
-    private static @NotNull SavableMap getRepository(@NotNull Player player) {
-        return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
-    }
 
     /**
      * Command handler for deleting a player's home.
@@ -56,7 +51,7 @@ public class DeleteHome {
     @CommandData(value = "homedelete", aliases = {"deletehome", "delhome", "homedel"}, target = CommandTarget.PLAYER)
     public void deleteHomeCommand(@NotNull CommandPayload<CommandSender> commandPayload, @ArgumentName("home") String homeName) {
         Player player = (Player) commandPayload.getSender();
-        MetaList<LocationNode> homeList = getRepository(player).getListNotNull("home_list", LocationNode.class);
+        MetaList<LocationNode> homeList = Warp.getRepository(player).getListNotNull("home_list", LocationNode.class);
         if (homeList.removeIf(warp -> warp.name().equals(homeName))) {
             player.sendMessage(Component.translatable("server.home.delete.success", Component.text(homeName)));
             return;
@@ -80,6 +75,6 @@ public class DeleteHome {
     @TabCompleter("homedelete")
     public @NotNull @Unmodifiable Set<String> deleteHomeTabCompleter(@NotNull CommandPayload<CommandSender> commandPayload) {
         Player player = (Player) commandPayload.getSender();
-        return getRepository(player).getListNotNull("home_list", LocationNode.class).stream().map(LocationNode::name).collect(Collectors.toUnmodifiableSet());
+        return Warp.getRepository(player).getListNotNull("home_list", LocationNode.class).stream().map(LocationNode::name).collect(Collectors.toUnmodifiableSet());
     }
 }
