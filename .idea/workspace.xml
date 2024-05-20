@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/LocationNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/Warp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/DeleteHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/HomeCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/ListHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/MaxHomes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/SetHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/DeleteWarp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/ListWarp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/SetWarp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/WarpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Warp" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Plugrol&quot;
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Plugrol/WarpPlugin.git&quot;,
+    &quot;accountId&quot;: &quot;8ec0c539-0d53-4cfc-b72a-d1221f2ed059&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/net/kissenpvp/paper/kissenpaper-api/1.20.4-R0.1-SNAPSHOT/kissenpaper-api-1.20.4-R0.1-SNAPSHOT.jar!/net/kissenpvp/paper/api/base/PaperKissen.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="KubernetesApiProvider">{}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2baCRof7NhVVZLpB4rWTrlofPdo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.WarpPlugin [build].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/ivo/Library/Warp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/bebdor/IdeaProjects/WarpPlugin/src/main/java/net/kissenpvp/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="WarpPlugin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.WarpPlugin [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-77ac15d44862-intellij.indexing.shared.core-IU-242.10180.25" />
+        <option value="bundled-js-predefined-1d06a55b98c1-cb551a44b0f8-JavaScript-IU-242.10180.25" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="" />
+      <created>1706443799319</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706443799319</updated>
+      <workItem from="1706443800336" duration="383000" />
+      <workItem from="1706444194234" duration="108000" />
+      <workItem from="1706444311335" duration="1723000" />
+      <workItem from="1706455771401" duration="2281000" />
+      <workItem from="1706465953959" duration="6492000" />
+      <workItem from="1706473640948" duration="9000" />
+      <workItem from="1706555452114" duration="5000000" />
+      <workItem from="1706804327523" duration="2416000" />
+      <workItem from="1706807126548" duration="3045000" />
+      <workItem from="1706813549882" duration="6955000" />
+      <workItem from="1706896634454" duration="5064000" />
+      <workItem from="1706972461546" duration="18000" />
+      <workItem from="1706974211149" duration="4189000" />
+      <workItem from="1706979041380" duration="2602000" />
+      <workItem from="1707650372549" duration="3505000" />
+      <workItem from="1709230907625" duration="653000" />
+      <workItem from="1709389156443" duration="4348000" />
+      <workItem from="1709402138059" duration="1427000" />
+      <workItem from="1709451127207" duration="606000" />
+      <workItem from="1709454670619" duration="64000" />
+      <workItem from="1709457665273" duration="6345000" />
+      <workItem from="1709476778911" duration="36000" />
+      <workItem from="1709476961146" duration="1562000" />
+      <workItem from="1709479024171" duration="810000" />
+      <workItem from="1709484516889" duration="1936000" />
+      <workItem from="1710444326136" duration="893000" />
+      <workItem from="1716201230497" duration="196000" />
+      <workItem from="1716201475336" duration="90000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

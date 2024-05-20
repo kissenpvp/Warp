@@ -1,0 +1,5 @@
+name: Warp
+main: net.kissenpvp.Warp
+api-version: 1.13
+version: '${version}'
+author: DevLucas
