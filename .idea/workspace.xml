@@ -4,32 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/LocationNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/Warp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/DeleteHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/HomeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/ListHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/MaxHomes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/SetHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/DeleteWarp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/ListWarp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/SetWarp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/warp/WarpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="Initial Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/Warp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/Warp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/DeleteHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/DeleteHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/HomeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/HomeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/ListHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/ListHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/SetHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/kissenpvp/commands/home/SetHome.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +35,22 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Warp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Warp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Warp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Warp" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -81,7 +79,7 @@
   <component name="GitLabMergeRequestsSettings">{}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Plugrol/WarpPlugin.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/KissenPvP/Warp.git&quot;,
     &quot;accountId&quot;: &quot;8ec0c539-0d53-4cfc-b72a-d1221f2ed059&quot;
   }
 }</component>
@@ -100,6 +98,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Warp [assemble].executor": "Run",
     "Gradle.WarpPlugin [build].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -122,7 +121,29 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.WarpPlugin [build]">
+    <configuration name="Warp [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="WarpPlugin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -148,6 +169,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.WarpPlugin [build]" />
+        <item itemvalue="Gradle.Warp [assemble]" />
       </list>
     </recent_temporary>
   </component>
@@ -194,11 +216,25 @@
       <workItem from="1709484516889" duration="1936000" />
       <workItem from="1710444326136" duration="893000" />
       <workItem from="1716201230497" duration="196000" />
-      <workItem from="1716201475336" duration="90000" />
+      <workItem from="1716201475336" duration="188000" />
+      <workItem from="1716201670631" duration="1515000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1716201612659</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716201612659</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
 </project>

@@ -1,12 +1,14 @@
 package net.kissenpvp.commands.home;
 
 import net.kissenpvp.LocationNode;
+import net.kissenpvp.Warp;
 import net.kissenpvp.core.api.command.CommandPayload;
 import net.kissenpvp.core.api.command.CommandTarget;
 import net.kissenpvp.core.api.command.annotations.ArgumentName;
 import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.command.annotations.TabCompleter;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
+import net.kissenpvp.core.api.database.savable.SavableMap;
 import net.kissenpvp.paper.api.base.Context;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.CommandSender;
@@ -32,6 +34,10 @@ import java.util.stream.Collectors;
  */
 public class DeleteHome {
 
+    private static @NotNull SavableMap getRepository(@NotNull Player player) {
+        return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
+    }
+
     /**
      * Command handler for deleting a player's home.
      *
@@ -48,12 +54,10 @@ public class DeleteHome {
      * @see Player
      */
     @CommandData(value = "homedelete", aliases = {"deletehome", "delhome", "homedel"}, target = CommandTarget.PLAYER)
-    public void deleteHomeCommand(@NotNull CommandPayload<CommandSender> commandPayload, @ArgumentName("home") String homeName)
-    {
+    public void deleteHomeCommand(@NotNull CommandPayload<CommandSender> commandPayload, @ArgumentName("home") String homeName) {
         Player player = (Player) commandPayload.getSender();
-        MetaList<LocationNode> homeList = player.getUser(Context.LOCAL).getListNotNull("home_list", LocationNode.class);
-        if (homeList.removeIf(warp -> warp.name().equals(homeName)))
-        {
+        MetaList<LocationNode> homeList = getRepository(player).getListNotNull("home_list", LocationNode.class);
+        if (homeList.removeIf(warp -> warp.name().equals(homeName))) {
             player.sendMessage(Component.translatable("server.home.delete.success", Component.text(homeName)));
             return;
         }
@@ -74,9 +78,8 @@ public class DeleteHome {
      * @see Player
      */
     @TabCompleter("homedelete")
-    public @NotNull @Unmodifiable Set<String> deleteHomeTabCompleter(@NotNull CommandPayload<CommandSender> commandPayload)
-    {
+    public @NotNull @Unmodifiable Set<String> deleteHomeTabCompleter(@NotNull CommandPayload<CommandSender> commandPayload) {
         Player player = (Player) commandPayload.getSender();
-        return player.getUser(Context.LOCAL).getListNotNull("home_list", LocationNode.class).stream().map(LocationNode::name).collect(Collectors.toUnmodifiableSet());
+        return getRepository(player).getListNotNull("home_list", LocationNode.class).stream().map(LocationNode::name).collect(Collectors.toUnmodifiableSet());
     }
 }

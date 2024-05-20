@@ -6,9 +6,12 @@ import net.kissenpvp.commands.warp.ListWarp;
 import net.kissenpvp.commands.warp.SetWarp;
 import net.kissenpvp.commands.warp.WarpCommand;
 import net.kissenpvp.core.api.command.exception.OperationException;
+import net.kissenpvp.core.api.database.connection.DatabaseConnection;
+import net.kissenpvp.core.api.database.connection.DatabaseImplementation;
+import net.kissenpvp.core.api.database.meta.Table;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
-import net.kissenpvp.core.api.message.ThemeProvider;
 import net.kissenpvp.core.api.util.PageBuilder;
+import net.kissenpvp.visual.api.theme.ThemeProvider;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.TranslatableComponent;
@@ -24,7 +27,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.text.MessageFormat;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Objects;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -49,6 +55,12 @@ public class Warp extends JavaPlugin {
     }
 
     private MetaList<LocationNode> warpList;
+
+    private static @NotNull Table getTable() {
+        DatabaseImplementation databaseImplementation = Bukkit.getKissen().getImplementation(DatabaseImplementation.class);
+        DatabaseConnection connection = databaseImplementation.getConnection("private").orElse(databaseImplementation.getPrimaryConnection());
+        return connection.createTable("warp_table");
+    }
 
     @Override
     public void onEnable() {
@@ -82,8 +94,7 @@ public class Warp extends JavaPlugin {
         pluginManager.registerTranslation("server.warp.list.empty", new MessageFormat("There have no warps available."), this);
         pluginManager.registerTranslation("server.warp.list.entry", new MessageFormat("{0} {1}"), this);
         pluginManager.registerTranslation("server.warp.teleport.chat", new MessageFormat("[Teleport]"), this);
-
-        warpList = Bukkit.getKissen().getPrivateMeta().getCollection("warp_list", LocationNode.class).join();
+        getTable().registerMeta(this).getCollection("warp_list", LocationNode.class).join();
     }
 
     /**
@@ -109,7 +120,7 @@ public class Warp extends JavaPlugin {
      *
      * @param expression the boolean expression to be validated
      * @param message    the {@link Component} message to be included in the {@link OperationException} if the validation fails
-     * @throws OperationException     if the specified boolean expression is false
+     * @throws OperationException   if the specified boolean expression is false
      * @throws NullPointerException if the specified {@link Component} message is `null`
      */
     public void validate(boolean expression, @NotNull Component message) {

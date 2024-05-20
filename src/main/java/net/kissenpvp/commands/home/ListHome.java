@@ -7,6 +7,7 @@ import net.kissenpvp.core.api.command.CommandPayload;
 import net.kissenpvp.core.api.command.CommandTarget;
 import net.kissenpvp.core.api.command.annotations.ArgumentName;
 import net.kissenpvp.core.api.command.annotations.CommandData;
+import net.kissenpvp.core.api.database.savable.SavableMap;
 import net.kissenpvp.core.api.util.PageBuilder;
 import net.kissenpvp.core.api.util.PageImplementation;
 import net.kissenpvp.paper.api.base.Context;
@@ -38,6 +39,10 @@ import java.util.stream.Stream;
  */
 public class ListHome {
 
+    private static @NotNull SavableMap getRepository(@NotNull Player player) {
+        return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
+    }
+
     /**
      * Command handler for listing a player's homes.
      *
@@ -60,7 +65,8 @@ public class ListHome {
         Player player = (Player) commandPayload.getSender();
         Warp plugin = Warp.getPlugin(Warp.class);
 
-        List<LocationNode> homeList = player.getUser(Context.LOCAL).getListNotNull("home_list", LocationNode.class);
+        SavableMap repository = player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
+        List<LocationNode> homeList = repository.getListNotNull("home_list", LocationNode.class);
         plugin.validate(!homeList.isEmpty(), Component.translatable("server.home.list.empty"));
 
         Component home = Component.text("Home");

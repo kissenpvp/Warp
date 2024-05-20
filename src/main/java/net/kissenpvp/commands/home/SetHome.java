@@ -1,6 +1,7 @@
 package net.kissenpvp.commands.home;
 
 import net.kissenpvp.LocationNode;
+import net.kissenpvp.Warp;
 import net.kissenpvp.core.api.command.CommandPayload;
 import net.kissenpvp.core.api.command.CommandTarget;
 import net.kissenpvp.core.api.command.annotations.ArgumentName;
@@ -8,8 +9,10 @@ import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.command.exception.OperationException;
 import net.kissenpvp.core.api.config.ConfigurationImplementation;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
+import net.kissenpvp.core.api.database.savable.SavableMap;
 import net.kissenpvp.paper.api.base.Context;
 import net.kissenpvp.paper.api.permission.PaperPermission;
+import net.kissenpvp.paper.api.permission.Permission;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -55,7 +58,9 @@ public class SetHome {
     @CommandData(value = "homeset", aliases = "sethome", target = CommandTarget.PLAYER)
     public void setHomeCommand(@NotNull CommandPayload<CommandSender> commandPayload, @ArgumentName("home") String homeName) {
         Player player = (Player) commandPayload.getSender();
-        MetaList<LocationNode> homeList = player.getUser(Context.LOCAL).getListNotNull("home_list", LocationNode.class);
+
+        SavableMap repository = player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
+        MetaList<LocationNode> homeList = repository.getListNotNull("home_list", LocationNode.class);
 
         test(player, homeList); // throws if max homes reached
 
@@ -121,7 +126,7 @@ public class SetHome {
      * @see Player
      */
     private int getMaxHomes(@NotNull Player player) {
-        Set<PaperPermission> permissions = player.getPermissionList();
+        Set<Permission> permissions = player.getPermissionList();
         List<Integer> numbers = permissions.stream().filter(isHomePermission()).map(cutPrefix()).sorted().toList();
 
         if (numbers.isEmpty()) {
@@ -129,21 +134,21 @@ public class SetHome {
             return config.getSetting(MaxHomes.class);
         }
 
-        return numbers.get(numbers.size() - 1);
+        return numbers.getLast();
     }
 
     /**
-     * Returns a {@link Function} to extract an integer from a {@link PaperPermission} by cutting the prefix.
+     * Returns a {@link Function} to extract an integer from a {@link Permission} by cutting the prefix.
      *
-     * <p>The {@code cutPrefix} method returns a {@link Function} that takes a {@link PaperPermission} and
+     * <p>The {@code cutPrefix} method returns a {@link Function} that takes a {@link Permission} and
      * extracts an integer by removing the specified prefix. This function is pure and does not modify the
      * original permission object.</p>
      *
-     * @return a pure {@link Function} extracting an integer from a {@link PaperPermission} by cutting the prefix
-     * @see PaperPermission
+     * @return a pure {@link Function} extracting an integer from a {@link Permission} by cutting the prefix
+     * @see Permission
      */
     @Contract(pure = true, value = "-> new")
-    private @NotNull Function<PaperPermission, Integer> cutPrefix() {
+    private @NotNull Function<Permission, Integer> cutPrefix() {
         return permission -> {
             String number = permission.getName().substring(PERMISSION_PREFIX.length());
             return Integer.parseInt(number); // safe
@@ -151,18 +156,18 @@ public class SetHome {
     }
 
     /**
-     * Returns a {@link Predicate} to check if a {@link PaperPermission} represents a home permission.
+     * Returns a {@link Predicate} to check if a {@link Permission} represents a home permission.
      *
-     * <p>The {@code isHomePermission} method returns a {@link Predicate} that checks if a {@link PaperPermission}
+     * <p>The {@code isHomePermission} method returns a {@link Predicate} that checks if a {@link Permission}
      * represents a home permission. It verifies the permission name starts with the specified prefix and is valid,
      * and attempts to parse the remaining part as an integer. This predicate is pure and does not modify the
      * original permission object.</p>
      *
-     * @return a pure {@link Predicate} checking if a {@link PaperPermission} represents a home permission
-     * @see PaperPermission
+     * @return a pure {@link Predicate} checking if a {@link Permission} represents a home permission
+     * @see Permission
      */
     @Contract(pure = true, value = "-> new")
-    private @NotNull Predicate<PaperPermission> isHomePermission() {
+    private @NotNull Predicate<Permission> isHomePermission() {
         return paperPermission -> {
             if (!paperPermission.getName().startsWith(PERMISSION_PREFIX) || !paperPermission.isValid()) {
                 return false;

@@ -8,6 +8,7 @@ import net.kissenpvp.core.api.command.annotations.ArgumentName;
 import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.command.annotations.TabCompleter;
 import net.kissenpvp.core.api.command.exception.OperationException;
+import net.kissenpvp.core.api.database.savable.SavableMap;
 import net.kissenpvp.paper.api.base.Context;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.CommandSender;
@@ -34,6 +35,10 @@ import java.util.stream.Collectors;
  */
 public class HomeCommand {
 
+    private static @NotNull SavableMap getRepository(@NotNull Player player) {
+        return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
+    }
+
     /**
      * Command handler for teleporting to a player's home.
      *
@@ -53,12 +58,11 @@ public class HomeCommand {
     @CommandData(value = "home", target = CommandTarget.PLAYER)
     public void homeCommand(@NotNull CommandPayload<CommandSender> commandPayload, @ArgumentName("home") String homeName) {
         Player player = (Player) commandPayload.getSender();
-        List<LocationNode> homeList = player.getUser(Context.LOCAL).getListNotNull("home_list", LocationNode.class);
+        List<LocationNode> homeList = getRepository(player).getListNotNull("home_list", LocationNode.class);
 
         Component name = Component.text(homeName);
         Component message = Component.translatable("server.home.teleport.success", name);
-        if(!Warp.getPlugin(Warp.class).searchLocation(player, homeName, message, homeList))
-        {
+        if (!Warp.getPlugin(Warp.class).searchLocation(player, homeName, message, homeList)) {
             throw new OperationException(Component.translatable("server.home.homename.invalid", name));
         }
     }
@@ -77,9 +81,8 @@ public class HomeCommand {
      * @see Player
      */
     @TabCompleter("home")
-    public @NotNull @Unmodifiable Set<String> homeTabCompleter(@NotNull CommandPayload<CommandSender> commandPayload)
-    {
+    public @NotNull @Unmodifiable Set<String> homeTabCompleter(@NotNull CommandPayload<CommandSender> commandPayload) {
         Player player = (Player) commandPayload.getSender();
-        return player.getUser(Context.LOCAL).getListNotNull("home_list", LocationNode.class).stream().map(LocationNode::name).collect(Collectors.toUnmodifiableSet());
+        return getRepository(player).getListNotNull("home_list", LocationNode.class).stream().map(LocationNode::name).collect(Collectors.toUnmodifiableSet());
     }
 }
