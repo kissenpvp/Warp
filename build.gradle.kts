@@ -27,7 +27,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 
-    compileOnly("net.kissenpvp.paper:kissenpaper-api:1.20.6-R0.1-20240520.100459-6")
+    implementation("net.kissenpvp.paper:kissenpaper-api:1.20.6-R0.1-20240521.122310-2")
     implementation("net.kissenpvp:VisualAPI:1.5.3-20240520.105955-1")
 }
 
