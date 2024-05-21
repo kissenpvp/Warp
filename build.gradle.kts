@@ -1,9 +1,10 @@
 plugins {
     id("java")
+    `maven-publish`
 }
 
 group = "net.kissenpvp"
-version = "2.1.2"
+version = "2.1.2-SNAPSHOT"
 
 configurations {
     create("includeLib")
@@ -14,6 +15,7 @@ java {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
+
 
 repositories {
     mavenCentral()
@@ -27,6 +29,19 @@ dependencies {
 
     compileOnly("net.kissenpvp.paper:kissenpaper-api:1.20.6-R0.1-20240520.100459-6")
     implementation("net.kissenpvp:VisualAPI:1.5.3-20240520.105955-1")
+}
+
+publishing {
+    repositories {
+        maven("https://repo.kissenpvp.net/repository/maven-snapshots/") {
+            name = "kissenpvp"
+            credentials(PasswordCredentials::class)
+        }
+    }
+
+    publications.create<MavenPublication>(project.name) {
+        artifact("build/libs/${project.name}-${project.version}.jar")
+    }
 }
 
 tasks.processResources {
