@@ -9,7 +9,7 @@ import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.command.exception.OperationException;
 import net.kissenpvp.core.api.config.ConfigurationImplementation;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
-import net.kissenpvp.paper.api.permission.Permission;
+import net.kissenpvp.pulvinar.api.permission.Permission;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -126,7 +126,7 @@ public class SetHome {
         List<Integer> numbers = permissions.stream().filter(isHomePermission()).map(cutPrefix()).sorted().toList();
 
         if (numbers.isEmpty()) {
-            ConfigurationImplementation config = Bukkit.getKissen().getImplementation(ConfigurationImplementation.class);
+            ConfigurationImplementation config = Bukkit.getPulvinar().getImplementation(ConfigurationImplementation.class);
             return config.getSetting(MaxHomes.class);
         }
 

@@ -15,7 +15,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -82,7 +81,7 @@ public class ListWarp {
      * @see Warp
      */
     private @NotNull PageBuilder<LocationNode> generatePageBuilder(@NotNull List<LocationNode> cache) {
-        PageImplementation pageImplementation = Bukkit.getKissen().getImplementation(PageImplementation.class);
+        PageImplementation pageImplementation = Bukkit.getPulvinar().getImplementation(PageImplementation.class);
         return pageImplementation.createPageBuilder(cache);
     }
 }
