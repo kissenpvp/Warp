@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "net.kissenpvp"
-version = "2.1.2-SNAPSHOT"
+version = "2.1.3-SNAPSHOT"
 
 configurations {
     create("includeLib")

@@ -126,8 +126,7 @@ public class SetHome {
         List<Integer> numbers = permissions.stream().filter(isHomePermission()).map(cutPrefix()).sorted().toList();
 
         if (numbers.isEmpty()) {
-            ConfigurationImplementation config = Bukkit.getPulvinar().getImplementation(ConfigurationImplementation.class);
-            return config.getSetting(MaxHomes.class);
+            return Warp.getPlugin(Warp.class).getMaxHomes();
         }
 
         return numbers.getLast();

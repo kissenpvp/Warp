@@ -1,6 +1,9 @@
 package net.kissenpvp;
 
-import net.kissenpvp.commands.home.*;
+import net.kissenpvp.commands.home.DeleteHome;
+import net.kissenpvp.commands.home.HomeCommand;
+import net.kissenpvp.commands.home.ListHome;
+import net.kissenpvp.commands.home.SetHome;
 import net.kissenpvp.commands.warp.DeleteWarp;
 import net.kissenpvp.commands.warp.ListWarp;
 import net.kissenpvp.commands.warp.SetWarp;
@@ -28,6 +31,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
+import java.io.File;
 import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.Collections;
@@ -57,6 +61,7 @@ public class Warp extends JavaPlugin {
     }
 
     private MetaList<LocationNode> warpList;
+    private int maxHomes;
 
     private static @NotNull Table getTable() {
         DatabaseImplementation databaseImplementation = Bukkit.getPulvinar().getImplementation(DatabaseImplementation.class);
@@ -70,15 +75,30 @@ public class Warp extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        String homePrefix = "The home ";
-        String warpPrefix = "The warp ";
-        String override = "Do you want to override it? Type /confirm to confirm or /cancel to cancel. This request will expire after 30 seconds.";
 
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerCommand(this, new SetHome(), new DeleteHome(), new HomeCommand(), new ListHome());
         pluginManager.registerCommand(this, new DeleteWarp(), new SetWarp(), new WarpCommand(), new ListWarp());
 
-        pluginManager.registerSetting(new MaxHomes(), this);
+        loadConfig();
+        registerTranslations(pluginManager);
+
+        this.warpList = getTable().registerMeta(this).getCollection("warp_list", LocationNode.class).join();
+    }
+
+    private void loadConfig() {
+        File configFile = new File(getDataFolder(), "config.yml");
+        if (getDataFolder().mkdirs() || !configFile.exists()) {
+            this.saveDefaultConfig();
+        }
+
+        maxHomes = getConfig().getInt("max_homes");
+    }
+
+    private void registerTranslations(@NotNull PluginManager pluginManager) {
+        String homePrefix = "The home ";
+        String warpPrefix = "The warp ";
+        String override = "Do you want to override it? Type /confirm to confirm or /cancel to cancel. This request will expire after 30 seconds.";
 
         pluginManager.registerTranslation("server.home.create.success", new MessageFormat("Successfully created the home {0}."), this);
         pluginManager.registerTranslation("server.home.delete.success", new MessageFormat("Successfully deleted the home {0}."), this);
@@ -100,8 +120,10 @@ public class Warp extends JavaPlugin {
         pluginManager.registerTranslation("server.warp.list.empty", new MessageFormat("There have no warps available."), this);
         pluginManager.registerTranslation("server.warp.list.entry", new MessageFormat("{0} {1}"), this);
         pluginManager.registerTranslation("server.warp.teleport.chat", new MessageFormat("[Teleport]"), this);
+    }
 
-        this.warpList = getTable().registerMeta(this).getCollection("warp_list", LocationNode.class).join();
+    public int getMaxHomes() {
+        return maxHomes;
     }
 
     /**
