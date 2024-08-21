@@ -63,12 +63,6 @@ public class Warp extends JavaPlugin {
     private MetaList<LocationNode> warpList;
     private int maxHomes;
 
-    private static @NotNull Table getTable() {
-        DatabaseImplementation databaseImplementation = Bukkit.getPulvinar().getImplementation(DatabaseImplementation.class);
-        DatabaseConnection connection = databaseImplementation.getConnection("private").orElse(databaseImplementation.getPrimaryConnection());
-        return connection.createTable("warp_table");
-    }
-
     public static @NotNull SavableMap getRepository(@NotNull Player player) {
         return player.getUser(Context.LOCAL).getRepository(Warp.getPlugin(Warp.class));
     }
@@ -83,7 +77,8 @@ public class Warp extends JavaPlugin {
         loadConfig();
         registerTranslations(pluginManager);
 
-        this.warpList = getTable().registerMeta(this).getCollection("warp_list", LocationNode.class).join();
+        Table table = Bukkit.getPulvinar().getPrivateDatabase().createTable("warp_table");
+        this.warpList = table.registerMeta(this).getCollection("warp_list", LocationNode.class).join();
     }
 
     private void loadConfig() {

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="Added nexus publishing to gradle file" />
+    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="Made warp not use kissen configuration system">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +31,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Warp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Warp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Warp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -55,8 +70,8 @@
   <component name="GitLabMergeRequestsSettings">{}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/KissenPvP/Warp.git&quot;,
-    &quot;accountId&quot;: &quot;8ec0c539-0d53-4cfc-b72a-d1221f2ed059&quot;
+    &quot;url&quot;: &quot;https://github.com/kissenpvp/Warp.git&quot;,
+    &quot;accountId&quot;: &quot;0284c779-8c84-4f15-b83e-b07a7811e5b6&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -74,9 +89,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Warp [assemble].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Warp [publish].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.WarpPlugin [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.WarpPlugin [build].executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -94,11 +110,11 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Warp [publish]">
+  <component name="RunManager" selected="Gradle.WarpPlugin [build]">
     <configuration name="Warp [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -167,8 +183,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Warp [publish]" />
         <item itemvalue="Gradle.WarpPlugin [build]" />
+        <item itemvalue="Gradle.Warp [publish]" />
         <item itemvalue="Gradle.Warp [assemble]" />
       </list>
     </recent_temporary>
@@ -176,8 +192,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-77ac15d44862-intellij.indexing.shared.core-IU-242.10180.25" />
-        <option value="bundled-js-predefined-1d06a55b98c1-cb551a44b0f8-JavaScript-IU-242.10180.25" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
       </set>
     </attachedChunks>
   </component>
@@ -223,6 +239,10 @@
       <workItem from="1716222670503" duration="1602000" />
       <workItem from="1716289672888" duration="22000" />
       <workItem from="1716292023049" duration="61000" />
+      <workItem from="1716648818962" duration="834000" />
+      <workItem from="1717930981873" duration="581000" />
+      <workItem from="1717931570087" duration="1979000" />
+      <workItem from="1724261005289" duration="152000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -264,7 +284,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716292076875</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adapted to new requirements">
+      <option name="closed" value="true" />
+      <created>1716649510887</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716649510887</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Made warp not use kissen configuration system">
+      <option name="closed" value="true" />
+      <created>1717936767612</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717936767612</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +323,8 @@
     <MESSAGE value="Made gradlew executable" />
     <MESSAGE value="Fixed missing variable initialization" />
     <MESSAGE value="Added nexus publishing to gradle file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added nexus publishing to gradle file" />
+    <MESSAGE value="Adapted to new requirements" />
+    <MESSAGE value="Made warp not use kissen configuration system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made warp not use kissen configuration system" />
   </component>
 </project>

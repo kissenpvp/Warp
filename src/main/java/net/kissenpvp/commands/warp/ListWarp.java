@@ -8,16 +8,12 @@ import net.kissenpvp.core.api.command.annotations.ArgumentName;
 import net.kissenpvp.core.api.command.annotations.CommandData;
 import net.kissenpvp.core.api.database.meta.list.MetaList;
 import net.kissenpvp.core.api.util.PageBuilder;
-import net.kissenpvp.core.api.util.PageImplementation;
 import net.kyori.adventure.text.Component;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * The ListWarp class containing a command to list global warps.
@@ -61,27 +57,8 @@ public class ListWarp {
         plugin.validate(!cache.isEmpty(), Component.translatable("server.warp.list.empty"));
 
         Component title = Component.text("Warp");
-        PageBuilder<LocationNode> pageBuilder = generatePageBuilder(cache);
+        PageBuilder<LocationNode> pageBuilder = new PageBuilder<>(cache);
 
         player.sendMessage(plugin.generateComponent(title, commandPayload.getLabel(), pageBuilder, page.orElse(1)));
-    }
-
-    /**
-     * Generates a {@link PageBuilder} for paginating a list of global warps.
-     *
-     * <p>The {@code generatePageBuilder} method creates a {@link PageBuilder} using the provided
-     * {@link Set} of {@link LocationNode} representing global warp locations. It utilizes the
-     * {@link PageImplementation} from the Kissen framework to implement pagination.</p>
-     *
-     * @param cache the set of {@link LocationNode} representing global warp locations
-     * @return a {@link PageBuilder} for paginating the list of global warps
-     * @throws NullPointerException if the cache is {@code null}
-     * @see PageBuilder
-     * @see LocationNode
-     * @see Warp
-     */
-    private @NotNull PageBuilder<LocationNode> generatePageBuilder(@NotNull List<LocationNode> cache) {
-        PageImplementation pageImplementation = Bukkit.getPulvinar().getImplementation(PageImplementation.class);
-        return pageImplementation.createPageBuilder(cache);
     }
 }
