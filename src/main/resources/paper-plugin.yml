@@ -1,5 +1,6 @@
 name: Warp
 main: net.kissenpvp.Warp
-api-version: 1.13
 version: '${version}'
+description: Adds warps and homes to the server
 author: DevLucas
+api-version: '1.21'

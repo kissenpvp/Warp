@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="Made warp not use kissen configuration system">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f18c1baa-8b89-449a-b7e9-b6be5b784efc" name="Changes" comment="Update to new API and 1.20.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paper-plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +242,8 @@
       <workItem from="1717930981873" duration="581000" />
       <workItem from="1717931570087" duration="1979000" />
       <workItem from="1724261005289" duration="152000" />
+      <workItem from="1724261274841" duration="214000" />
+      <workItem from="1724407873490" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -300,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717936767612</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update to new API and 1.20.1">
+      <option name="closed" value="true" />
+      <created>1724261457000</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724261457000</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +334,7 @@
     <MESSAGE value="Added nexus publishing to gradle file" />
     <MESSAGE value="Adapted to new requirements" />
     <MESSAGE value="Made warp not use kissen configuration system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made warp not use kissen configuration system" />
+    <MESSAGE value="Update to new API and 1.20.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to new API and 1.20.1" />
   </component>
 </project>
