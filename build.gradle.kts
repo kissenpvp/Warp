@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "net.kissenpvp"
-version = "2.1.4-SNAPSHOT"
+version = "2.1.5-SNAPSHOT"
 
 configurations {
     create("includeLib")
@@ -49,7 +49,7 @@ tasks.processResources {
     inputs.properties(props)
     filteringCharset = "UTF-8"
 
-    filesMatching("plugin.yml") {
+    filesMatching("paper-plugin.yml") {
         expand(props)
     }
 }
